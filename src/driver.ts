@@ -16,7 +16,7 @@ import * as proc from './proc';
 import rollbar from './rollbar';
 import {StateManager} from './state';
 import * as util from './util';
-import {ConfigureArguments, VariantConfigurationOptions} from './variant';
+import {ConfigureArguments, VariantOption} from './variant';
 
 const log = logging.createLogger('driver');
 
@@ -304,7 +304,7 @@ export abstract class CMakeDriver implements vscode.Disposable {
    * Change the current options from the variant.
    * @param opts The new options
    */
-  async setVariantOptions(opts: VariantConfigurationOptions) {
+  async setVariantOptions(opts: VariantOption) {
     log.debug('Setting new variant', opts.long || '(Unnamed)');
     this._variantBuildType = opts.buildType || this._variantBuildType;
     this._variantConfigureSettings = opts.settings || this._variantConfigureSettings;
