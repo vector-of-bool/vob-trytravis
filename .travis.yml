@@ -1,12 +1,12 @@
 language: cpp
 
 os:
-  - osx
-  # - linux
+  # - osx
+  - linux
 
 compiler:
-  - clang
-  # - gcc
+  # - clang
+  - gcc
 
 dist: trusty
 sudo: false
