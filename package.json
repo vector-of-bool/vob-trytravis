@@ -636,12 +636,6 @@
           "description": "Enable CMake server",
           "scope": "resource"
         },
-        "cmake.enableTraceLogging": {
-          "type": "boolean",
-          "default": false,
-          "description": "Enable trace logging to file and console (very noisy)",
-          "scope": "window"
-        },
         "cmake.loggingLevel": {
           "type": "string",
           "default": "info",
