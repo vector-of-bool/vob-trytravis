@@ -55,7 +55,9 @@ export interface SiteData {
   Testing: TestingData;
 }
 
-export interface CTestResults { Site: SiteData; }
+export interface CTestResults {
+  Site: SiteData;
+}
 
 interface EncodedMeasurementValue {
   $: {encoding?: string; compression?: string;};
@@ -243,9 +245,9 @@ export class DecorationManager {
 
   private _refreshEditorDecorations(editor: vscode.TextEditor) {
     const fails_acc: vscode.DecorationOptions[] = [];
-    const editor_file = util.normalizePath(editor.document.fileName);
+    const editor_file = util.lightNormalizePath(editor.document.fileName);
     for (const decor of this.failingTestDecorations) {
-      const decor_file = util.normalizePath(
+      const decor_file = util.lightNormalizePath(
           path.isAbsolute(decor.fileName) ? decor.fileName : path.join(this.binaryDir, decor.fileName));
       if (editor_file !== decor_file) {
         continue;
