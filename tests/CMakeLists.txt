@@ -20,3 +20,5 @@ if(DOCKER_EXECUTABLE)
             )
     endforeach()
 endif()
+
+add_subdirectory(ci)

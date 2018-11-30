@@ -1,0 +1,10 @@
+language: cpp
+
+os:
+  # - linux
+  - osx
+  - windows
+
+dist: xenial
+
+script: cmake -P ci.cmake

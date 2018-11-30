@@ -1,5 +1,6 @@
 function(_pmm_find_python3 ovar)
-    file(GLOB pyenv_dirs "$ENV{HOME}/.pyenv/versions/3.*/bin")
+    file(GLOB pyenv_dirs "$ENV{HOME}/.pyenv/versions/3.*/")
+    file(GLOB c_python_dirs "C:/Python3*")
     find_program(
         _ret
         NAMES
@@ -15,17 +16,10 @@ function(_pmm_find_python3 ovar)
             python3
         HINTS
             ${pyenv_dirs}
-        PATHS
-            C:/Python38
-            C:/Python37
-            C:/Python36
-            C:/Python35
-            C:/Python34
-            C:/Python33
-            C:/Python32
-            C:/Python31
-            C:/Python30
-            C:/Python3
+            ${c_python_dirs}
+        PATH_SUFFIXES
+            bin
+            Scripts
         )
     set("${ovar}" "${_ret}" PARENT_SCOPE)
     unset(_ret CACHE)
